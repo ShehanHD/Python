@@ -1,0 +1,16 @@
+.center-div{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  border-radius: 3px;
+}
+
+.msgErr{
+    color: crimson;
+    font-size: smaller;
+}

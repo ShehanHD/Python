@@ -1,0 +1,32 @@
+{% extends 'index.temp.html' %}
+{% load static %}
+
+{% block links %}
+    <script src="{% static 'js/login_register.js' %}"  ></script>
+{% endblock links %}
+
+{% block login_register %}
+<div class="center-div">
+
+    <div class="card p-3 shadow-lg">
+        <div class="card-body text-center">
+            <h4 class="card-title">User Registration</h4>
+            <div class="form-group">
+                <form>
+                    {% csrf_token %}
+                  <input type="text" class="form-control mb-1" name="name" id="name" placeholder="Name">
+                  <input type="text" class="form-control mb-1" name="surname" id="surname" placeholder="Surname">
+                  <input type="email" class="form-control mb-1" name="email" id="email" placeholder="E-mail">
+                  <span class="msgErr" id="errorUsername"></span>
+                  <input type="password" class="form-control mb-1" name="password" id="password" placeholder="Password">
+                  <input type="password" class="form-control mb-1" name="repeat_password" id="repeat_password" placeholder="Repeat Password">
+                  <span class="msgErr" id="errorPassword"></span>
+                  <input name="login" id="register" class="btn btn-primary w-100" type="button" value="Register">
+                </form>
+            </div>
+        </div>
+        <button type="button" class="btn btn-sm btn-secondary" onclick="window.history.back();">Torna al Login</button>
+    </div>    
+
+</div>
+{% endblock login_register %}
