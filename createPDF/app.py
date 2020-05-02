@@ -1,4 +1,5 @@
 import os
+import img2pdf
 from PIL import Image
 from time import sleep
 
@@ -10,7 +11,7 @@ def create(imageList, path):
     else:
         for i in imageList:
             img.append(Image.open(r''+path+'/' + f'{i}').convert('RGB'))
-            sleep(0.1)
+            sleep(1)
         pdf = input("pdf file name you want to save(without .pdf)>")
         img[0].save(r'PDF/' + pdf + '.pdf', save_all=True, append_images=img)
 
