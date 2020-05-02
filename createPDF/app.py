@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+from time import sleep
 
 def create(imageList, path):
     img = []
@@ -9,6 +10,7 @@ def create(imageList, path):
     else:
         for i in imageList:
             img.append(Image.open(r''+path+'/' + f'{i}').convert('RGB'))
+            sleep(0.1)
         pdf = input("pdf file name you want to save(without .pdf)>")
         img[0].save(r'PDF/' + pdf + '.pdf', save_all=True, append_images=img)
 
@@ -20,3 +22,6 @@ if os.path.exists(path):
     create(li, path)
 else:
     print("Wrong folder")
+
+
+#1152x1535
